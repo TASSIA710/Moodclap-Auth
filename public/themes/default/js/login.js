@@ -15,7 +15,6 @@ function login() {
 		if (status != 200) return false;
 
 		if (res.success) {
-			setCookie('session', res.token, AUTH_CONFIG.COOKIE_DOMAIN);
 			document.location.href = AUTH_CONFIG.ROOT;
 			return true;
 		}
