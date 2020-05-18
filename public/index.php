@@ -19,9 +19,17 @@ if (AuthManager::isLoggedIn()) {
 		// Show index
 		include(__DIR__ . '/../views/index/index.php');
 
+	} elseif ($REQUEST_URI == 'accounts/') {
+		// Show accounts
+		include(__DIR__ . '/../views/accounts/list.php');
+
 	} elseif (preg_match('/account\/([a-zA-Z0-9-_]+)\//', $REQUEST_URI, $MATCHES)) {
 		// Show account
 		include(__DIR__ . '/../views/accounts/index.php');
+
+	} elseif ($REQUEST_URI == 'groups/') {
+		// Show groups
+		// TODO
 
 	} else {
 		// Redirect to index

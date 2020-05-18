@@ -18,11 +18,17 @@ $RESPONSE = new stdClass();
 
 if ($path == 'login/') {
 	include(__DIR__ . '/../../api/login.php');
+
 } elseif ($path == 'register/') {
 	include(__DIR__ . '/../../api/register.php');
+
+} elseif ($path == 'accounts/get/') {
+	include(__DIR__ . '/../../api/accounts/get.php');
+
 } else {
 	http_response_code(404);
 	exit;
+
 }
 
 

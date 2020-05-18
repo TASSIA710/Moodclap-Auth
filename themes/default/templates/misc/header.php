@@ -6,9 +6,12 @@
 
 		<title><?= AUTH_CONFIG['WINDOW_TITLE']; ?></title>
 
+		<link rel="stylesheet" type="text/css" href="<?= AUTH_CONFIG['ROOT'] . 'assets/css/global.css'; ?>">
 		<link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css">
 		<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 
+		<script type="text/javascript" src="<?= AUTH_CONFIG['ROOT'] . 'assets/custom/config.js.php'; ?>"></script>
+		<script type="text/javascript" src="<?= AUTH_CONFIG['ROOT'] . 'assets/js/global.js'; ?>"></script>
 		<script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
 		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
 		<script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
