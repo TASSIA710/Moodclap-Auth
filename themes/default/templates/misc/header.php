@@ -35,7 +35,7 @@
 			<div class="form-inline">
 				<?php if (AuthManager::isLoggedIn()) { ?>
 					<span class="text-light">Welcome back,
-						<a class="text-light" href="<?= AUTH_CONFIG['ROOT'] . 'account/' . AuthManager::getCurrentUser()->getUsername() . '/'; ?>">
+						<a class="text-light" href="<?= AUTH_CONFIG['ROOT'] . 'account/' . Utility::escapeXSS(AuthManager::getCurrentUser()->getUsername()) . '/'; ?>">
 							<?= Utility::escapeXSS(AuthManager::getCurrentUser()->getUsername()); ?></a>.</span>
 					<a class="ml-3 btn btn-sm btn-outline-danger" href="<?= AUTH_CONFIG['ROOT'] . 'logout/'; ?>">Logout<i class="fas fa-sign-out-alt ml-2"></i></a>
 				<?php } else { ?>
@@ -54,11 +54,11 @@
 					<?php for ($i = 0; $i < count(Breadcrumbs::get()); $i++) {
 						if ($i == count(Breadcrumbs::get()) - 1) {
 							echo '<span class="breadcrumb-item active">';
-							echo Breadcrumbs::get()[$i]['name'];
+							echo Utility::escapeXSS(Breadcrumbs::get()[$i]['name']);
 							echo '</span>';
 						} else {
 							echo '<span class="breadcrumb-item">';
-							echo '<a href="' . Breadcrumbs::get()[$i]['url'] . '">' . Breadcrumbs::get()[$i]['name'] . '</a>';
+							echo '<a href="' . Utility::escapeXSS(Breadcrumbs::get()[$i]['url']) . '">' . Utility::escapeXSS(Breadcrumbs::get()[$i]['name']) . '</a>';
 							echo '</span>';
 						}
 					} ?>
