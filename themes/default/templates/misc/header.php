@@ -26,10 +26,17 @@
 
 		<nav class="navbar navbar-expand-lg navbar-dark border-bottom bg-dark">
 
-			<a class="navbar-brand text-light ml-2" href="<?= AUTH_CONFIG['ROOT']; ?>"><i class="fas fa-database mr-2"></i><?= AUTH_CONFIG['BRAND_NAME']; ?></a>
+			<a class="navbar-brand text-light ml-2" href="<?= AUTH_CONFIG['ROOT']; ?>"><?= AUTH_CONFIG['BRAND_NAME']; ?></a>
+
+			<span class="nav-item text-secondary">Auth Center</span>
 
 			<ul class="navbar-nav mr-auto">
-				<li class="nav-item text-secondary">Auth Center</li>
+				<li class="nav-item ml-3">
+					<a class="nav-link" href="<?= AUTH_CONFIG['ROOT'] . 'accounts/'; ?>"><small class="fas fa-user mr-2"></small>Accounts</a>
+				</li>
+				<li class="nav-item ml-3">
+					<a class="nav-link" href="<?= AUTH_CONFIG['ROOT'] . 'groups/'; ?>"><small class="fas fa-users mr-2"></small>Groups</a>
+				</li>
 			</ul>
 
 			<div class="form-inline">
