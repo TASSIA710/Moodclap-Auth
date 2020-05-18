@@ -37,7 +37,7 @@
 			<div class="form-inline">
 				<?php if (AuthManager::isLoggedIn()) { ?>
 					<span class="text-light">Welcome back, <a class="text-light" href="<?= AUTH_CONFIG['ROOT'] . 'account/' . AuthManager::getCurrentUser()->getUsername() . '/'; ?>"><?= AuthManager::getCurrentUser()->getUsername(); ?></a>.</span>
-					<a class="ml-3 btn btn-outline-danger text-light" href="<?= AUTH_CONFIG['ROOT'] . 'logout/'; ?>">Logout<i class="fas fa-sign-out-alt ml-2"></i></a>
+					<a class="ml-3 btn btn-sm btn-outline-danger" href="<?= AUTH_CONFIG['ROOT'] . 'logout/'; ?>">Logout<i class="fas fa-sign-out-alt ml-2"></i></a>
 				<?php } else { ?>
 					<a class="text-light" href="<?= AUTH_CONFIG['ROOT'] . 'login/'; ?>"><i class="fas fa-key mr-2"></i>Login</a>
 					<span class="text-light mx-2">&vert;</span>
