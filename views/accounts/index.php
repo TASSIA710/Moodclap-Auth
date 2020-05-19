@@ -1,6 +1,10 @@
 <?php
 
-$ACCOUNT = Database::getAccountByName($MATCHES[1]);
+if (is_numeric($MATCHES[1])) {
+	$ACCOUNT = Database::getAccount($MATCHES[1]);
+} else {
+	$ACCOUNT = Database::getAccountByName($MATCHES[1]);
+}
 if ($ACCOUNT == null) {
 	http_response_code(404);
 	return;

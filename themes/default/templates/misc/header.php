@@ -59,6 +59,8 @@
 
 		<div class="p-5">
 
+			<div id="error_container"></div>
+
 			<?php if (count(Breadcrumbs::get()) != 0) { ?>
 				<div class="breadcrumb">
 					<?php for ($i = 0; $i < count(Breadcrumbs::get()); $i++) {
