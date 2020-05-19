@@ -1,6 +1,6 @@
 <?php
 
-include(__DIR__ . '/../Moodclap/Init.php');
+include(__DIR__ . '/../../Moodclap/Init.php');
 include(__DIR__ . '/../Configuration.php');
 
 
