@@ -34,7 +34,7 @@ function applyFilters() {
 			p.classList.add('border-bottom');
 			p.classList.add('py-1');
 			p.classList.add('mb-0');
-			p.innerHTML = res.accounts[i].GroupName;
+			p.innerHTML = '<a href="' + AUTH_CONFIG.ROOT + 'group/' + res.accounts[i].GroupID + '/">' + res.accounts[i].GroupName + '</a>';
 			x.append(p);
 		}
 
