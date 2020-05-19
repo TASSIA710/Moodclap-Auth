@@ -1,7 +1,7 @@
 <?php
 
-include(__DIR__ . '/../../Moodclap/Init.php');
 include(__DIR__ . '/../../Configuration.php');
+include(__DIR__ . '/../..' . AUTH_CONFIG['CORE_PATH'] . '/Init.php');
 
 $path = substr($_SERVER['REQUEST_URI'], strlen(AUTH_CONFIG['ROOT'] . 'api/'));
 
