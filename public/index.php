@@ -29,7 +29,7 @@ if (AuthManager::isLoggedIn()) {
 
 	} elseif ($REQUEST_URI == 'groups/') {
 		// Show groups
-		// TODO
+		include(__DIR__ . '/../views/groups/list.php');
 
 	} else {
 		// Redirect to index
