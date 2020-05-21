@@ -30,6 +30,14 @@ if (AuthManager::isLoggedIn()) {
 		// Show groups
 		include(__DIR__ . '/../views/groups/list.php');
 
+	} elseif ($REQUEST_URI == 'groups/new/') {
+		// Show create new group
+		include(__DIR__ . '/../views/groups/new.php');
+
+	} elseif (preg_match('/group\/([a-zA-Z0-9-_]+)\//', $REQUEST_URI, $MATCHES)) {
+		// Show group
+		include(__DIR__ . '/../views/groups/index.php');
+
 	} else {
 		// Redirect to index
 		header('Location: ' . AUTH_CONFIG['ROOT']);
