@@ -12,7 +12,10 @@ foreach (Database::query($sql) as $row) {
 	$RESPONSE->accounts[count($RESPONSE->accounts)] = [
 		'AccountID' => Utility::escapeXSS($row['AccountID']),
 		'Username' => Utility::escapeXSS($row['Username']),
+		'FirstVisit' => intval($row['FirstVisit']),
+		'LastVisit' => intval($row['LastVisit']),
 		'GroupID' => Utility::escapeXSS($row['GroupID']),
+		'GroupNameID' => Utility::escapeXSS($row['GroupNameID']),
 		'GroupName' => Utility::escapeXSS($row['GroupName']),
 	];
 }
