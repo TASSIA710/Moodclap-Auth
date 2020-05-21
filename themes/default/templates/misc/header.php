@@ -12,6 +12,7 @@
 
 		<script type="text/javascript" src="<?= AUTH_CONFIG['ROOT'] . 'assets/custom/config.js.php'; ?>"></script>
 		<script type="text/javascript" src="<?= AUTH_CONFIG['ROOT'] . 'assets/js/global.js'; ?>"></script>
+		<script type="text/javascript" src="<?= AUTH_CONFIG['ROOT'] . 'assets/js/relative_time.js'; ?>"></script>
 		<script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
 		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
 		<script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
@@ -43,6 +44,7 @@
 			</ul>
 
 			<div class="form-inline">
+				<a class="text-light mr-2" href="#header_stats" data-toggle="collapse"><small class="fas fa-info-circle"></small></a>
 				<?php if (AuthManager::isLoggedIn()) { ?>
 					<span class="text-light">Welcome back,
 						<a class="text-light" href="<?= AUTH_CONFIG['ROOT'] . 'account/' . Utility::escapeXSS(AuthManager::getCurrentUser()->getUsername()) . '/'; ?>">
@@ -56,6 +58,18 @@
 			</div>
 
 		</nav>
+
+		<div class="bg-light text-muted collapse" id="header_stats">
+			<div class="py-2 d-flex justify-content-center">
+				<span>Generated in <code id="stat_time_total">?ms</code> (PHP: <code id="stat_time_php">?ms</code>, SQL: <code id="stat_time_sql">?ms</code>)</span>
+				<span class="mx-2">&vert;</span>
+				<span>Ran <code id="stat_count_queries">?</code> initial DB queries</span>
+				<span class="mx-2">&vert;</span>
+				<span>Core <code><?= MC_VER_MMPB; ?></code></span>
+				<span class="mx-2">&vert;</span>
+				<span>Auth Center <code><?= MC_AC_VER_MMPB; ?></code></span>
+			</div>
+		</div>
 
 		<div class="p-5">
 
