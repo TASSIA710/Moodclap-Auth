@@ -38,6 +38,11 @@ if (AuthManager::isLoggedIn()) {
 		// Show group
 		include(__DIR__ . '/../views/groups/index.php');
 
+	} elseif ($REQUEST_URI == 'license/') {
+		// Show license
+		header('Content-Type: text/plain');
+		echo file_get_contents(__DIR__ . '/../LICENSE');
+
 	} else {
 		// Redirect to index
 		header('Location: ' . AUTH_CONFIG['ROOT']);
@@ -55,6 +60,11 @@ if (AuthManager::isLoggedIn()) {
 	} elseif ($REQUEST_URI == 'register/') {
 		// Show register
 		include(__DIR__ . '/../views/auth/register.php');
+
+	} elseif ($REQUEST_URI == 'license/') {
+		// Show license
+		header('Content-Type: text/plain');
+		echo file_get_contents(__DIR__ . '/../LICENSE');
 
 	} else {
 		// Redirect to login
