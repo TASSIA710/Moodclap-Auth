@@ -1,7 +1,6 @@
 <?php
 
-include(__DIR__ . '/../Configuration.php');
-include(__DIR__ . '/..' . AUTH_CONFIG['CORE_PATH'] . '/Init.php');
+include(__DIR__ . '/../core/Init.php');
 
 
 $REQUEST_URI = substr($_SERVER['REQUEST_URI'], strlen(AUTH_CONFIG['ROOT']));
