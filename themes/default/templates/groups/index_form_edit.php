@@ -49,7 +49,7 @@
 	<div class="col-2">
 		<?php if (AuthManager::hasPermission(PERM_AC_GROUPS_DELETE)) { ?>
 			<h6 class="text-muted">Actions:</h6>
-			<button class="btn btn-outline-danger px-4"><i class="fas fa-trash mr-2"></i>Delete</button>
+			<button class="btn btn-outline-danger px-4 w-100"><i class="fas fa-trash mr-2"></i>Delete</button>
 		<?php } ?>
 	</div>
 
