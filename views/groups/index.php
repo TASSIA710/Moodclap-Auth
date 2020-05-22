@@ -16,4 +16,10 @@ Breadcrumbs::add('Auth Center', AUTH_CONFIG['ROOT']);
 Breadcrumbs::add('Groups', AUTH_CONFIG['ROOT'] . 'groups/');
 Breadcrumbs::add($GROUP->getName(), AUTH_CONFIG['ROOT'] . 'group/' . $GROUP->getNameID() . '/');
 
-include(__DIR__ . '/../../themes/default/templates/groups/index.php');
+$canEdit = AuthManager::hasPermission(PERM_AC_GROUPS_EDIT) && $GROUP->getSortPermission() > AuthManager::getCurrentUser()->getGroup()->getSortPermission();
+
+if ($canEdit) {
+	include(__DIR__ . '/../../themes/default/templates/groups/index_edit.php');
+} else {
+	include(__DIR__ . '/../../themes/default/templates/groups/index_readonly.php');
+}
