@@ -69,8 +69,8 @@
 			<textarea class="form-control" rows="<?= count(explode("\n", $json)); ?>" readonly><?= $json; ?></textarea>
 		</div>
 		<div class="multi-collapse-permissions collapse">
-			<textarea class="form-control" rows="<?= count(explode("\n", $json)); ?>"><?= $json; ?></textarea>
-			<button class="btn btn-sm btn-outline-primary mt-2" disabled><i class="fas fa-sync-alt mr-2"></i>Update Permissions</button>
+			<textarea class="form-control" id="edit_permissions_field" rows="<?= count(explode("\n", $json)); ?>"><?= $json; ?></textarea>
+			<button class="btn btn-sm btn-outline-primary mt-2" id="edit_permissions_button"><i class="fas fa-sync-alt mr-2"></i>Update Permissions</button>
 		</div>
 	</div>
 

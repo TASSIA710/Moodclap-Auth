@@ -27,6 +27,9 @@ if ($path == 'login/') {
 } elseif ($path == 'group/edit/name/') {
 	include(__DIR__ . '/../../api/group/edit/name.php');
 
+} elseif ($path == 'group/edit/permissions/') {
+	include(__DIR__ . '/../../api/group/edit/permissions.php');
+
 } else {
 	http_response_code(404);
 	exit;

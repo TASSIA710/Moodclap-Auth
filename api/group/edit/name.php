@@ -10,14 +10,15 @@ if (!AuthManager::hasPermission(PERM_AC_GROUPS_EDIT)) {
 
 // Validate ID
 if (!$PAYLOAD->id) {
-	http_response_code(400);
-	exit;
+	$RESPONSE->success = false;
+	$RESPONSE->message = 'Missing parameter: id';
+	return;
 }
 
 $GROUP = Database::getGroup($PAYLOAD->id);
 if ($GROUP == null) {
 	$RESPONSE->success = false;
-	$RESPONSE->message = 'Missing parameter: id';
+	$RESPONSE->message = 'Group not found.';
 	return;
 }
 

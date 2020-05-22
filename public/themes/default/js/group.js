@@ -50,6 +50,54 @@ function updateName() {
 
 
 
+/* Edit Permissions */
+function updatePermissionsField(e) {
+	var permissions = e.value.trim();
+
+	if (!validatePermissions(permissions)) e.classList.add('border-danger');
+	else e.classList.remove('border-danger');
+}
+
+function validatePermissions(permissions) {
+	try {
+		JSON.parse(permissions);
+		return true;
+	} catch (e) {
+		return false;
+	}
+}
+
+function updatePermissions() {
+	document.getElementById('edit_permissions_button').disabled = true;
+	var permissions = document.getElementById('edit_permissions_field').value.trim();
+	if (!validatePermissions(permissions)) return;
+
+	var data = {};
+	data.id = document.getElementById('edit_id').value;
+	data.permissions = permissions;
+
+	launchAJAX(AUTH_CONFIG.ROOT + 'api/group/edit/permissions/', data, function(res, status, text) {
+		if (status != 200) {
+			document.getElementById('edit_permissions_button').disabled = false;
+			return false;
+		}
+
+		if (res.success) {
+			document.location.reload();
+			return true;
+		}
+
+		showAlertDanger('', res.message);
+		document.getElementById('edit_permissions_button').disabled = false;
+		return true;
+	});
+}
+/* Edit Permissions */
+
+
+
+
+
 /* Load Event */
 window.addEventListener('load', function() {
 	var e;
@@ -59,5 +107,11 @@ window.addEventListener('load', function() {
 
 	e = document.getElementById('edit_name_button');
 	if (e) e.addEventListener('click', updateName);
+
+	e = document.getElementById('edit_permissions_field');
+	if (e) e.addEventListener('input', function() { updatePermissionsField(document.getElementById('edit_permissions_field')); });
+
+	e = document.getElementById('edit_permissions_button');
+	if (e) e.addEventListener('click', updatePermissions);
 });
 /* Load Event */
