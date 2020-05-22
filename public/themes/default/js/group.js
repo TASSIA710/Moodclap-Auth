@@ -19,6 +19,7 @@ function validateName(name) {
 }
 
 function updateName() {
+	document.getElementById('edit_name_button').disabled = true;
 	var name = document.getElementById('edit_name_field').value.trim();
 	var slug = encodeURI(name.toLowerCase().split(' ').join('-'));
 	if (!validateName(name)) return;
@@ -28,7 +29,10 @@ function updateName() {
 	data.name = name;
 
 	launchAJAX(AUTH_CONFIG.ROOT + 'api/group/edit/name/', data, function(res, status, text) {
-		if (status != 200) return false;
+		if (status != 200) {
+			document.getElementById('edit_name_button').disabled = false;
+			return false;
+		}
 
 		if (res.success) {
 			document.location.href = AUTH_CONFIG.ROOT + 'group/' + slug + '/';
@@ -36,6 +40,7 @@ function updateName() {
 		}
 
 		showAlertDanger('', res.message);
+		document.getElementById('edit_name_button').disabled = false;
 		return true;
 	});
 }
