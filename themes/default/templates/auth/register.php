@@ -4,7 +4,7 @@
 	<head>
 		<title><?= AUTH_CONFIG['WINDOW_TITLE']; ?></title>
 
-		<link rel="stylesheet" type="text/css" href="<?= AUTH_CONFIG['ROOT'] . 'themes/default/css/simple_page.css'; ?>">
+		<link rel="stylesheet" type="text/css" href="<?= AUTH_CONFIG['ROOT'] . 'assets/css/simple_page.css'; ?>">
 		<link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css">
 		<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 
