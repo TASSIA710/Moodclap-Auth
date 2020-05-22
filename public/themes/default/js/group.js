@@ -20,6 +20,7 @@ function validateName(name) {
 
 function updateName() {
 	var name = document.getElementById('edit_name_field').value.trim();
+	var slug = encodeURI(name.toLowerCase().split(' ').join('-'));
 	if (!validateName(name)) return;
 
 	var data = {};
@@ -30,7 +31,7 @@ function updateName() {
 		if (status != 200) return false;
 
 		if (res.success) {
-			document.location.reload();
+			document.location.href = AUTH_CONFIG.ROOT + 'group/' + slug + '/';
 			return true;
 		}
 
