@@ -17,8 +17,6 @@
 	</div>
 
 	<div class="col-2">
-		<h6 class="text-muted">Actions:</h6>
-		<button class="btn btn-outline-danger px-4" disabled><i class="fas fa-trash mr-2"></i>Delete</button>
 	</div>
 
 </div>
