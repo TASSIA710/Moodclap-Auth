@@ -28,7 +28,7 @@
 
 	<body class="font">
 
-		<nav class="navbar navbar-expand-lg navbar-dark border-bottom bg-dark">
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 
 			<a class="navbar-brand text-light ml-2" href="<?= AUTH_CONFIG['ROOT']; ?>"><?= AUTH_CONFIG['BRAND_NAME']; ?></a>
 
