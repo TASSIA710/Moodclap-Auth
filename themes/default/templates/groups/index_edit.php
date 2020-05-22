@@ -9,5 +9,6 @@ include(__DIR__ . '/../misc/header.php');
 		<?php include(__DIR__ . '/index_form_edit.php'); ?>
 	</div>
 </div>
+<script src="<?= AUTH_CONFIG['ROOT']; ?>themes/default/js/group.js"></script>
 <?php
 include(__DIR__ . '/../misc/footer.php');

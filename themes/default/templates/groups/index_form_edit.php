@@ -1,6 +1,8 @@
 
 <div class="row w-75">
 
+	<input type="hidden" id="edit_id" value="<?= $GROUP->getID(); ?>">
+
 	<div class="col">
 		<h6 class="text-muted">
 			<span>Group Name:</span>
@@ -10,8 +12,9 @@
 			<input type="text" class="form-control" value="<?= Utility::escapeXSS($GROUP->getName()); ?>" readonly>
 		</div>
 		<div class="multi-collapse-name collapse">
-			<input type="text" class="form-control" value="<?= Utility::escapeXSS($GROUP->getName()); ?>">
-			<button class="btn btn-sm btn-outline-primary mt-2" disabled><i class="fas fa-sync-alt mr-2"></i>Update Name</button>
+			<input type="text" class="form-control" id="edit_name_field" value="<?= Utility::escapeXSS($GROUP->getName()); ?>">
+			<small class="text-muted ml-2">URL Slug: <span id="edit_name_slug"><?= Utility::escapeXSS($GROUP->getNameID()); ?></span></small><br>
+			<button class="btn btn-sm btn-outline-primary mt-2" id="edit_name_button"><i class="fas fa-sync-alt mr-2"></i>Update Name</button>
 		</div>
 	</div>
 

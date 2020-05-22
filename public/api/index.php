@@ -1,7 +1,6 @@
 <?php
 
-include(__DIR__ . '/../../Configuration.php');
-include(__DIR__ . '/../..' . AUTH_CONFIG['CORE_PATH'] . '/Init.php');
+include(__DIR__ . '/../../core/Init.php');
 
 $path = substr($_SERVER['REQUEST_URI'], strlen(AUTH_CONFIG['ROOT'] . 'api/'));
 
@@ -24,6 +23,9 @@ if ($path == 'login/') {
 
 } elseif ($path == 'accounts/get/') {
 	include(__DIR__ . '/../../api/accounts/get.php');
+
+} elseif ($path == 'group/edit/name/') {
+	include(__DIR__ . '/../../api/group/edit/name.php');
 
 } else {
 	http_response_code(404);
