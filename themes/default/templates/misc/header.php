@@ -50,7 +50,7 @@
 			</ul>
 
 			<div class="form-inline">
-				<a class="text-light mr-2" href="#header_stats" data-toggle="collapse"><small class="fas fa-info-circle"></small></a>
+				<a class="text-secondary mr-3" href="#header_stats" data-toggle="collapse"><i class="fas fa-info-circle"></i></a>
 				<?php if (AuthManager::isLoggedIn()) { ?>
 					<span class="text-light">Welcome back,
 						<a class="text-light" href="<?= AUTH_CONFIG['ROOT'] . 'account/' . Utility::escapeXSS(AuthManager::getCurrentUser()->getUsername()) . '/'; ?>">
