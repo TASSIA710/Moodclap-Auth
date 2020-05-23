@@ -50,6 +50,98 @@ function updateName() {
 
 
 
+/* Edit Sort Permission */
+function updateSortPermissionField(e) {
+	validateSortPermission(e);
+}
+
+function validateSortPermission(e) {
+	if (e.value < e.min || e.value > e.max) {
+		e.classList.add('border-danger')
+		return false;
+	} else {
+		e.classList.remove('border-danger')
+		return true;
+	}
+}
+
+function updateSortPermission() {
+	document.getElementById('edit_sort_permission_button').disabled = true;
+	var e = document.getElementById('edit_sort_permission_field');
+	if (!validateSortPermission(e)) return;
+
+	var data = {};
+	data.id = document.getElementById('edit_id').value;
+	data.sorting = e.value;
+
+	launchAJAX(AUTH_CONFIG.ROOT + 'api/group/edit/sort_permission/', data, function(res, status, text) {
+		if (status != 200) {
+			document.getElementById('edit_sort_permission_button').disabled = false;
+			return false;
+		}
+
+		if (res.success) {
+			document.location.reload();
+			return true;
+		}
+
+		showAlertDanger('', res.message);
+		document.getElementById('edit_sort_permission_button').disabled = false;
+		return true;
+	});
+}
+/* Edit Sort Permission */
+
+
+
+
+
+/* Edit Sort Display */
+function updateSortDisplayField(e) {
+	validateSortDisplay(e);
+}
+
+function validateSortDisplay(e) {
+	if (e.value < e.min || e.value > e.max) {
+		e.classList.add('border-danger')
+		return false;
+	} else {
+		e.classList.remove('border-danger')
+		return true;
+	}
+}
+
+function updateSortDisplay() {
+	document.getElementById('edit_sort_display_button').disabled = true;
+	var e = document.getElementById('edit_sort_display_field');
+	if (!validateSortPermission(e)) return;
+
+	var data = {};
+	data.id = document.getElementById('edit_id').value;
+	data.sorting = e.value;
+
+	launchAJAX(AUTH_CONFIG.ROOT + 'api/group/edit/sort_display/', data, function(res, status, text) {
+		if (status != 200) {
+			document.getElementById('edit_sort_display_button').disabled = false;
+			return false;
+		}
+
+		if (res.success) {
+			document.location.reload();
+			return true;
+		}
+
+		showAlertDanger('', res.message);
+		document.getElementById('edit_sort_display_button').disabled = false;
+		return true;
+	});
+}
+/* Edit Sort Display */
+
+
+
+
+
 /* Edit Permissions */
 function updatePermissionsField(e) {
 	var permissions = e.value.trim();
@@ -107,6 +199,18 @@ window.addEventListener('load', function() {
 
 	e = document.getElementById('edit_name_button');
 	if (e) e.addEventListener('click', updateName);
+
+	e = document.getElementById('edit_sort_permission_field');
+	if (e) e.addEventListener('input', function() { updateSortPermissionField(document.getElementById('edit_sort_permission_field')); });
+
+	e = document.getElementById('edit_sort_permission_button');
+	if (e) e.addEventListener('click', updateSortPermission);
+
+	e = document.getElementById('edit_sort_display_field');
+	if (e) e.addEventListener('input', function() { updateSortDisplayField(document.getElementById('edit_sort_display_field')); });
+
+	e = document.getElementById('edit_sort_display_button');
+	if (e) e.addEventListener('click', updateSortDisplay);
 
 	e = document.getElementById('edit_permissions_field');
 	if (e) e.addEventListener('input', function() { updatePermissionsField(document.getElementById('edit_permissions_field')); });

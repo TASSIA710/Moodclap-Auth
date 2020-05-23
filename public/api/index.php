@@ -30,6 +30,12 @@ if ($path == 'login/') {
 } elseif ($path == 'group/edit/permissions/') {
 	include(__DIR__ . '/../../api/group/edit/permissions.php');
 
+} elseif ($path == 'group/edit/sort_display/') {
+	include(__DIR__ . '/../../api/group/edit/sort_display.php');
+
+} elseif ($path == 'group/edit/sort_permission/') {
+	include(__DIR__ . '/../../api/group/edit/sort_permission.php');
+
 } else {
 	http_response_code(404);
 	exit;
