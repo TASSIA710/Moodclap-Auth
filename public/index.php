@@ -38,6 +38,10 @@ if (AuthManager::isLoggedIn()) {
 		// Show group
 		include(__DIR__ . '/../views/groups/index.php');
 
+	} elseif ($REQUEST_URI == 'options/') {
+		// Show options
+		include(__DIR__ . '/../views/options/options.php');
+
 	} elseif ($REQUEST_URI == 'usercp/') {
 		// Show usercp
 		include(__DIR__ . '/../views/usercp/usercp.php');
