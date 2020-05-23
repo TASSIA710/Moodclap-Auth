@@ -41,6 +41,9 @@
 				<li class="nav-item ml-3">
 					<a class="nav-link" href="<?= AUTH_CONFIG['ROOT'] . 'groups/'; ?>"><small class="fas fa-users mr-2"></small>Groups</a>
 				</li>
+				<li class="nav-item ml-3">
+					<a class="nav-link" href="<?= AUTH_CONFIG['ROOT'] . 'usercp/'; ?>"><small class="fas fa-user-cog mr-2"></small>UserCP</a>
+				</li>
 			</ul>
 
 			<div class="form-inline">
