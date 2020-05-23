@@ -46,6 +46,18 @@ if (AuthManager::isLoggedIn()) {
 		// Show usercp
 		include(__DIR__ . '/../views/usercp/usercp.php');
 
+	} elseif ($REQUEST_URI == 'usercp/sessions/') {
+		// Show usercp sessions
+		include(__DIR__ . '/../views/usercp/sessions.php');
+
+	} elseif ($REQUEST_URI == 'usercp/password/') {
+		// Show usercp change password
+		include(__DIR__ . '/../views/usercp/password.php');
+
+	} elseif ($REQUEST_URI == 'usercp/disable/') {
+		// Show usercp disable account
+		include(__DIR__ . '/../views/usercp/disable.php');
+
 	} elseif ($REQUEST_URI == 'license/') {
 		// Show license
 		header('Content-Type: text/plain');
