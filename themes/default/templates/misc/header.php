@@ -36,16 +36,16 @@
 
 			<ul class="navbar-nav mr-auto">
 				<li class="nav-item ml-3">
-					<a class="nav-link" href="<?= AUTH_CONFIG['ROOT'] . 'accounts/'; ?>"><small class="fas fa-user mr-2"></small>Accounts</a>
+					<a class="nav-link" href="<?= AUTH_CONFIG['ROOT'] . 'accounts/'; ?>"><i class="fas fa-user mr-2"></i>Accounts</a>
 				</li>
 				<li class="nav-item ml-3">
-					<a class="nav-link" href="<?= AUTH_CONFIG['ROOT'] . 'groups/'; ?>"><small class="fas fa-users mr-2"></small>Groups</a>
+					<a class="nav-link" href="<?= AUTH_CONFIG['ROOT'] . 'groups/'; ?>"><i class="fas fa-users mr-2"></i>Groups</a>
 				</li>
 				<li class="nav-item ml-3">
-					<a class="nav-link" href="<?= AUTH_CONFIG['ROOT'] . 'usercp/'; ?>"><small class="fas fa-user-cog mr-2"></small>UserCP</a>
+					<a class="nav-link" href="<?= AUTH_CONFIG['ROOT'] . 'usercp/'; ?>"><i class="fas fa-user-cog mr-2"></i>UserCP</a>
 				</li>
 				<li class="nav-item ml-3">
-					<a class="nav-link" href="<?= AUTH_CONFIG['ROOT'] . 'options/'; ?>"><small class="fas fa-tools mr-2"></small>Options</a>
+					<a class="nav-link" href="<?= AUTH_CONFIG['ROOT'] . 'options/'; ?>"><i class="fas fa-tools mr-2"></i>Options</a>
 				</li>
 			</ul>
 
