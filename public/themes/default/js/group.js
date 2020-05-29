@@ -1,7 +1,7 @@
 
 /* Edit Name */
 function updateNameField(e) {
-	var name = e.value.trim();
+	const name = e.value.trim();
 	document.getElementById('edit_name_slug').innerHTML = encodeURI(name.toLowerCase().split(' ').join('-'));
 
 	if (!validateName(name)) e.classList.add('border-danger');
@@ -18,11 +18,11 @@ function validateName(name) {
 
 function updateName() {
 	document.getElementById('edit_name_button').disabled = true;
-	var name = document.getElementById('edit_name_field').value.trim();
-	var slug = encodeURI(name.toLowerCase().split(' ').join('-'));
+	const name = document.getElementById('edit_name_field').value.trim();
+	const slug = encodeURI(name.toLowerCase().split(' ').join('-'));
 	if (!validateName(name)) return;
 
-	var data = {};
+	const data = {};
 	data.id = document.getElementById('edit_id').value;
 	data.name = name;
 
@@ -65,10 +65,10 @@ function validateSortPermission(e) {
 
 function updateSortPermission() {
 	document.getElementById('edit_sort_permission_button').disabled = true;
-	var e = document.getElementById('edit_sort_permission_field');
+	const e = document.getElementById('edit_sort_permission_field');
 	if (!validateSortPermission(e)) return;
 
-	var data = {};
+	const data = {};
 	data.id = document.getElementById('edit_id').value;
 	data.sorting = e.value;
 
@@ -111,10 +111,10 @@ function validateSortDisplay(e) {
 
 function updateSortDisplay() {
 	document.getElementById('edit_sort_display_button').disabled = true;
-	var e = document.getElementById('edit_sort_display_field');
+	const e = document.getElementById('edit_sort_display_field');
 	if (!validateSortPermission(e)) return;
 
-	var data = {};
+	const data = {};
 	data.id = document.getElementById('edit_id').value;
 	data.sorting = e.value;
 
@@ -142,7 +142,7 @@ function updateSortDisplay() {
 
 /* Edit Permissions */
 function updatePermissionsField(e) {
-	var permissions = e.value.trim();
+	const permissions = e.value.trim();
 
 	if (!validatePermissions(permissions)) e.classList.add('border-danger');
 	else e.classList.remove('border-danger');
@@ -159,10 +159,10 @@ function validatePermissions(permissions) {
 
 function updatePermissions() {
 	document.getElementById('edit_permissions_button').disabled = true;
-	var permissions = document.getElementById('edit_permissions_field').value.trim();
+	const permissions = document.getElementById('edit_permissions_field').value.trim();
 	if (!validatePermissions(permissions)) return;
 
-	var data = {};
+	const data = {};
 	data.id = document.getElementById('edit_id').value;
 	data.permissions = permissions;
 
@@ -190,7 +190,7 @@ function updatePermissions() {
 
 /* Load Event */
 window.addEventListener('load', function() {
-	var e;
+	let e;
 
 	e = document.getElementById('edit_name_field');
 	if (e) e.addEventListener('input', function() { updateNameField(document.getElementById('edit_name_field')); });
