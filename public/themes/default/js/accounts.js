@@ -5,7 +5,7 @@ function applyFilters() {
 	const data = {};
 
 	launchAJAX(AUTH_CONFIG.ROOT + 'api/accounts/get/', data, function(res, status, text) {
-		if (status != 200) return false;
+		if (status !== 200) return false;
 
 		const x = document.getElementById('accounts');
 		x.querySelectorAll('p').forEach(function(e) {
