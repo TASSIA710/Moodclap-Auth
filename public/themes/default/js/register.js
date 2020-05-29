@@ -48,8 +48,8 @@ function validateUsernameString(str) {
 	if (!str) return false;
 	if (!str.match(/^[a-zA-Z]+[a-zA-Z0-9-_]+$/)) return false;
 	if (str.length < 3) return false;
-	if (str.length > 16) return false;
-	return true;
+	return str.length <= 16;
+
 }
 /* Validate Username */
 
@@ -68,8 +68,8 @@ function validateEmail(e) {
 
 function validateEmailString(str) {
 	if (!str) return false;
-	if (!isEmail(str)) return false;
-	return true;
+	return isEmail(str);
+
 }
 /* Validate Email */
 
@@ -89,8 +89,8 @@ function validatePassword(e) {
 function validatePasswordString(str) {
 	if (!str) return false;
 	if (str.length < 3) return false;
-	if (str.length > 32) return false;
-	return true;
+	return str.length <= 32;
+
 }
 /* Validate Password */
 

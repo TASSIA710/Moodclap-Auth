@@ -40,8 +40,8 @@ function validateUsername(e) {
 }
 
 function validateUsernameString(str) {
-	if (!str) return false;
-	return true;
+	return str;
+
 }
 /* Validate Username */
 
@@ -59,7 +59,7 @@ function validatePassword(e) {
 }
 
 function validatePasswordString(str) {
-	if (!str) return false;
-	return true;
+	return str;
+
 }
 /* Validate Password */

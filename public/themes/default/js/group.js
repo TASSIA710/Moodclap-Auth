@@ -14,8 +14,8 @@ function validateName(name) {
 	if (!name) return false;
 	if (!name.match(/^[a-zA-Z]+[a-zA-Z0-9-_ ]+$/)) return false;
 	if (name.length < 3) return false;
-	if (name.length > 32) return false;
-	return true;
+	return name.length <= 32;
+
 }
 
 function updateName() {
