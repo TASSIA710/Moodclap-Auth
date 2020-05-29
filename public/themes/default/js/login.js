@@ -12,7 +12,7 @@ function login() {
 	data.password = password;
 
 	launchAJAX(AUTH_CONFIG.ROOT + 'api/login/', data, function(res, status, text) {
-		if (status != 200) return false;
+		if (status !== 200) return false;
 
 		if (res.success) {
 			document.location.href = AUTH_CONFIG.ROOT;
