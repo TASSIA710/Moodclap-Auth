@@ -27,7 +27,7 @@ function updateName() {
 	data.name = name;
 
 	launchAJAX(AUTH_CONFIG.ROOT + 'api/group/edit/name/', data, function(res, status, text) {
-		if (status != 200) {
+		if (status !== 200) {
 			document.getElementById('edit_name_button').disabled = false;
 			return false;
 		}
@@ -73,7 +73,7 @@ function updateSortPermission() {
 	data.sorting = e.value;
 
 	launchAJAX(AUTH_CONFIG.ROOT + 'api/group/edit/sort_permission/', data, function(res, status, text) {
-		if (status != 200) {
+		if (status !== 200) {
 			document.getElementById('edit_sort_permission_button').disabled = false;
 			return false;
 		}
@@ -119,7 +119,7 @@ function updateSortDisplay() {
 	data.sorting = e.value;
 
 	launchAJAX(AUTH_CONFIG.ROOT + 'api/group/edit/sort_display/', data, function(res, status, text) {
-		if (status != 200) {
+		if (status !== 200) {
 			document.getElementById('edit_sort_display_button').disabled = false;
 			return false;
 		}
@@ -167,7 +167,7 @@ function updatePermissions() {
 	data.permissions = permissions;
 
 	launchAJAX(AUTH_CONFIG.ROOT + 'api/group/edit/permissions/', data, function(res, status, text) {
-		if (status != 200) {
+		if (status !== 200) {
 			document.getElementById('edit_permissions_button').disabled = false;
 			return false;
 		}
