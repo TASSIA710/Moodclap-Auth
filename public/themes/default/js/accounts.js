@@ -2,18 +2,18 @@
 /* Apply Filters */
 function applyFilters() {
 
-	var data = {};
+	const data = {};
 
 	launchAJAX(AUTH_CONFIG.ROOT + 'api/accounts/get/', data, function(res, status, text) {
 		if (status != 200) return false;
 
-		var x = document.getElementById('accounts');
+		const x = document.getElementById('accounts');
 		x.querySelectorAll('p').forEach(function(e) {
 			e.remove();
 		});
 
-		for (var i = 0; i < res.accounts.length; i++) {
-			var p = document.createElement('P');
+		for (let i = 0; i < res.accounts.length; i++) {
+			let p = document.createElement('P');
 			p.classList.add('text-muted');
 			p.classList.add('border-bottom');
 			p.classList.add('py-1');
