@@ -2,9 +2,7 @@
 /* Edit Name */
 function updateNameField(e) {
 	var name = e.value.trim();
-	var slug = encodeURI(name.toLowerCase().split(' ').join('-'));
-
-	document.getElementById('edit_name_slug').innerHTML = slug;
+	document.getElementById('edit_name_slug').innerHTML = encodeURI(name.toLowerCase().split(' ').join('-'));
 
 	if (!validateName(name)) e.classList.add('border-danger');
 	else e.classList.remove('border-danger');
