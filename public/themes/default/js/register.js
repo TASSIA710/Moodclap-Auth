@@ -1,17 +1,17 @@
 
 /* Register */
 function register() {
-	var username = validateUsername(document.getElementById('username'));
-	var email = validateEmail(document.getElementById('email'));
-	var password = validatePassword(document.getElementById('password'));
-	var password2 = validatePasswordConfirm(document.getElementById('password2'));
+	const username = validateUsername(document.getElementById('username'));
+	const email = validateEmail(document.getElementById('email'));
+	const password = validatePassword(document.getElementById('password'));
+	const password2 = validatePasswordConfirm(document.getElementById('password2'));
 
 	if (!username) return false;
 	if (!email) return false;
 	if (!password) return false;
 	if (!password2) return false;
 
-	var data = {};
+	const data = {};
 	data.username = username;
 	data.email = email;
 	data.password = password;
@@ -35,7 +35,7 @@ function register() {
 
 /* Validate Username */
 function validateUsername(e) {
-	var v = e.value.trim();
+	const v = e.value.trim();
 	if (!validateUsernameString(v)) {
 		e.classList.add('border-danger');
 		return null;
@@ -57,7 +57,7 @@ function validateUsernameString(str) {
 
 /* Validate Email */
 function validateEmail(e) {
-	var v = e.value.trim();
+	const v = e.value.trim();
 	if (!validateEmailString(v)) {
 		e.classList.add('border-danger');
 		return null;
@@ -77,7 +77,7 @@ function validateEmailString(str) {
 
 /* Validate Password */
 function validatePassword(e) {
-	var v = e.value.trim();
+	const v = e.value.trim();
 	if (!validatePasswordString(v)) {
 		e.classList.add('border-danger');
 		return null;
@@ -98,7 +98,7 @@ function validatePasswordString(str) {
 
 /* Validate Password Confirmation */
 function validatePasswordConfirm(e) {
-	var v = e.value.trim();
+	const v = e.value.trim();
 	if (!validatePasswordConfirmString(v)) {
 		e.classList.add('border-danger');
 		return null;
