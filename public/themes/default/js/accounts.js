@@ -43,7 +43,7 @@ function applyFilters() {
 			p.classList.add('py-1');
 			p.classList.add('mb-0');
 			p.classList.add('timestamped');
-			p.setAttribute('data-timestamp', res.accounts[i].LastVisit * 1000);
+			p.setAttribute('data-timestamp', (res.accounts[i].LastVisit * 1000).toString());
 			p.innerHTML = relativeTime(res.accounts[i].LastVisit * 1000);
 			x.append(p);
 
@@ -53,7 +53,7 @@ function applyFilters() {
 			p.classList.add('py-1');
 			p.classList.add('mb-0');
 			p.classList.add('timestamped');
-			p.setAttribute('data-timestamp', res.accounts[i].FirstVisit * 1000);
+			p.setAttribute('data-timestamp', (res.accounts[i].FirstVisit * 1000).toString());
 			p.innerHTML = relativeTime(res.accounts[i].FirstVisit * 1000);
 			x.append(p);
 		}
