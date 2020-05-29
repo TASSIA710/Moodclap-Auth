@@ -1,13 +1,13 @@
 
 /* Login */
 function login() {
-	var username = validateUsername(document.getElementById('username'));
-	var password = validatePassword(document.getElementById('password'));
+	const username = validateUsername(document.getElementById('username'));
+	const password = validatePassword(document.getElementById('password'));
 
 	if (!username) return false;
 	if (!password) return false;
 
-	var data = {};
+	const data = {};
 	data.username = username;
 	data.password = password;
 
@@ -30,7 +30,7 @@ function login() {
 
 /* Validate Username */
 function validateUsername(e) {
-	var v = e.value.trim();
+	const v = e.value.trim();
 	if (!validateUsernameString(v)) {
 		e.classList.add('border-danger');
 		return null;
@@ -49,7 +49,7 @@ function validateUsernameString(str) {
 
 /* Validate Password */
 function validatePassword(e) {
-	var v = e.value.trim();
+	const v = e.value.trim();
 	if (!validatePasswordString(v)) {
 		e.classList.add('border-danger');
 		return null;
