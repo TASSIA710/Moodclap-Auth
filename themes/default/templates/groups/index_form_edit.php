@@ -1,8 +1,8 @@
 
 <?php
 $id = Utility::escapeXSS($GROUP->getID());
-$name = Utility::escapeXSS($GROUP->getName());;
-$slug = Utility::escapeXSS($GROUP->getNameID());;
+$name = Utility::escapeXSS($GROUP->getName());
+$slug = Utility::escapeXSS($GROUP->getNameID());
 $sortPerm = Utility::escapeXSS($GROUP->getSortPermission());
 $sortPermMin = Utility::escapeXSS(AuthManager::getCurrentUser()->getGroup()->getSortPermission() + 1);
 $sortPermMax = 9999;
