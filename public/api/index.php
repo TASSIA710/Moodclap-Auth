@@ -22,7 +22,10 @@ if ($path == 'login/') {
 	include(__DIR__ . '/../../api/register.php');
 
 } elseif ($path == 'accounts/get/') {
-	include(__DIR__ . '/../../api/accounts/get.php');
+    include(__DIR__ . '/../../api/accounts/get.php');
+
+} elseif ($path == 'group/create/') {
+    include(__DIR__ . '/../../api/group/create.php');
 
 } elseif ($path == 'group/edit/name/') {
 	include(__DIR__ . '/../../api/group/edit/name.php');
